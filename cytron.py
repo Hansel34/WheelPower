@@ -15,31 +15,29 @@ p1 = GPIO.PWM(DIG1, 1)		# set pwm for M1
 p2 = GPIO.PWM(DIG2, 1)		# set pwm for M2
 
 
-password = input("Enter the password to run the motor!") 
 
-if password == "hello world":
-   try:					
-     while True:
+try:					
+  while True:
 
-      print "STOP"			# display "Forward" when programe run
-      GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
-      GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
-      p1.start(1)				# set Direction for M1
-      p2.start(1)				# set Direction for M2  
-      sleep(1)				#delay for 2 second
-                            
+   print "STOP"			# display "Forward" when programe run
+   GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
+   GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
+   p1.start(1)				# set Direction for M1
+   p2.start(1)				# set Direction for M2  
+   sleep(1)				#delay for 2 second
+                         
 
-      print "GO"
-      GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-      GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-      p1.start(1)                          
-      p2.start(1)                         
-      sleep(20)                             #delay for 3 second
+   print "GO"
+   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+   p1.start(1)                          
+   p2.start(1)                         
+   sleep(20)                             #delay for 3 second
 
 
-   except:					# exit programe when keyboard interupt
-      p1.start(0)				# set speed to 0
-      p2.start(0)				# set speed to 0
-      GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
-      GPIO.output(AN2, GPIO.LOW)  
-   					# Control+X to save and exit
+except:					# exit programe when keyboard interupt
+   p1.start(0)				# set speed to 0
+   p2.start(0)				# set speed to 0
+   GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.LOW)  
+					# Control+X to save and exit
