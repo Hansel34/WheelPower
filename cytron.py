@@ -11,8 +11,8 @@ GPIO.setup(AN1, GPIO.OUT)		# set pin as output
 GPIO.setup(DIG2, GPIO.OUT)		# set pin as output
 GPIO.setup(DIG1, GPIO.OUT)		# set pin as output
 sleep(1)				# delay for 1 seconds
-p1 = GPIO.PWM(DIG1, 1)		# set pwm for M1
-p2 = GPIO.PWM(DIG2, 1)		# set pwm for M2
+p1 = GPIO.PWM(DIG1, 100)		# set pwm for M1
+p2 = GPIO.PWM(DIG2, 100)		# set pwm for M2
 
 
 
@@ -22,16 +22,16 @@ try:
    print "STOP"			# display "Forward" when programe run
    GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
    GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
-   p1.start(1)				# set Direction for M1
-   p2.start(1)				# set Direction for M2  
+   p1.start(0)				# set Direction for M1
+   p2.start(0)				# set Direction for M2  
    sleep(1)				#delay for 2 second
                          
 
    print "GO"
-   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(1)                          
-   p2.start(1)                         
+   GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.LOW)           # set AN2 as HIGH, M2B will STOP
+   p1.start(20)                          
+   p2.start(20)                         
    sleep(20)                             #delay for 3 second
 
 
