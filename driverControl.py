@@ -1,12 +1,18 @@
+forwardAngle = 5 #Angle to start going forward
+backwardAngle = -5 #Angle to start going backward
+
+
+
+
 drive = driver()
 angle = angleDetection()
 
 while True:
 	currentAngle = angle.GetAngle()
-	if currentAngle > 5:
+	if currentAngle > forwardAngle:
 		drive.backward()
 
-	elif currentAngle < -5:
+	elif currentAngle < backwardAngle:
 		drive.forward()
 
 	else:
