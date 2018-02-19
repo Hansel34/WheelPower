@@ -32,7 +32,6 @@ class CompFilter():
 
         # Initialize and Calibrate gyroscope
         self.l3gd20.Init()
-##        self.l3gd20.Calibrate()
         self.gyro_alpha = 0.9
         self.gyro_dt = 0.02
         self.gyro_y = 0
