@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO			
 from time import sleep	
 
+sleepTime = 1
+
 class driver:
 
 	def __init__(self):
@@ -21,21 +23,21 @@ class driver:
 	def forward(self):
 	   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
 	   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-	   p1.start(60)                          
-	   p2.start(60)                         
-	   sleep(1)    
+	   self.p1.start(60)                          
+	   self.p2.start(60)                         
+	   sleep(sleepTime)    
 
 	def backward(self):
 	   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
 	   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-	   p1.start(40)                          
-	   p2.start(40)                         
-	   sleep(1)    
+	   self.p1.start(40)                          
+	   self.p2.start(40)                         
+	   sleep(sleepTime)    
 
 
 	def stop(self):
 		GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
 		GPIO.output(AN2, GPIO.LOW)           # set AN2 as HIGH, M2B will STOP
-		p1.start(0)                          
-		p2.start(0)                         
-		sleep(1)  
+		self.p1.start(0)                          
+		self.p2.start(0)                         
+		sleep(sleepTime)  
