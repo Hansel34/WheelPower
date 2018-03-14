@@ -74,8 +74,3 @@ class CompFilter():
 
         # Print for debugging
 ##        print('Pitch = {0}, Gyro = {1} Angle = {2}'.format(self.pitch, self.f_gyro_y, self.angle))
-
-c = CompFilter()
-while True:
-    c()
-    print('Angle = {0}'.format(c.angle))
