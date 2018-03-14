@@ -14,6 +14,7 @@ sleep(1)				# delay for 1 seconds
 p1 = GPIO.PWM(DIG1, 100)		# set pwm for M1
 p2 = GPIO.PWM(DIG2, 100)		# set pwm for M2
 
+speed = int(input())
 
 
 try:					
@@ -28,12 +29,23 @@ try:
                          
 
    print "GO"
-   GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.LOW)           # set AN2 as HIGH, M2B will STOP
-   p1.start(20)                          
-   p2.start(20)                         
-   sleep(20)                             #delay for 3 second
+   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+   p1.start(speed)                          
+   p2.start(speed)                         
+   sleep(1)                             #delay for 3 second
 
+   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+   p1.start(speed)                          
+   p2.start(speed)                         
+   sleep(1)
+
+   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+   p1.start(speed)                          
+   p2.start(speed)                         
+   sleep(10)    
 
 except:					# exit programe when keyboard interupt
    p1.start(0)				# set speed to 0
