@@ -4,15 +4,16 @@ import sys
 import numpy
 
 from CompFilter import *
-#from driverClass import *
+from driverClass import *
 
 # Initialize driver/sensor classes
-#drive = driver()
+drive = driver()
 compFilter = CompFilter()
 
 # Set up variables
-down_thresh = -8
-up_thresh = 8
+flat_thresh = -15
+down_thresh = -13
+up_thresh = -17
 debounce = 50
 angle = 0
 
@@ -30,19 +31,23 @@ def get_angle():
         angle += compFilter.angle
     angle = angle/50
     print (angle)
+    
 # Move chair based on angle
-#def move_chair():
- #   if angle > up_thresh:
- #       drive.forward()
+def move_chair():
+    if abs(angle) > abs(up_thresh):
+        drive.forward()
+        print("Moving forward")
 
-  #  elif angle < down_thresh:
-  #      drive.backward()
+    elif abs(angle) < abs(down_thresh):
+        drive.backward()
+        print("Moving backwards")
 
-   # else:
-   #     drive.stop()
+    else:
+        drive.stop()
+        print("Not assisting");
 
 # Main
 signal.signal(signal.SIGINT, signal_handler)
 while True:
     get_angle()
-    #move_chair()
+    move_chair()
