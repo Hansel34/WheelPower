@@ -37,14 +37,14 @@ try:
 
    GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
    GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(speed)                          
-   p2.start(speed)                         
+   p1.start(speed+5)                          
+   p2.start(speed+5)                         
    sleep(1)
 
    GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
    GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(speed)                          
-   p2.start(speed)                         
+   p1.start(speed+10)                          
+   p2.start(speed+10)                         
    sleep(10)    
 
 except:					# exit programe when keyboard interupt

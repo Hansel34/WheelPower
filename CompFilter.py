@@ -19,7 +19,7 @@ class CompFilter():
         self.f_accel_x = 0.0
         self.f_accel_y = 0.0
         self.f_accel_z = 0.0
-        self.acc_alpha = 0.1
+        self.acc_alpha = 0.025
 
         # Create and configure an L3GD20 instance.
         self.l3gd20 = L3GD20.L3GD20(busId = 1, slaveAddr = 0x6b,

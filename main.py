@@ -1,12 +1,13 @@
-import thread
+#import thread
 import signal
 import sys
+import numpy
 
-import CompFilter.py as cf
-import driverClass.py as d
+from CompFilter import *
+#from driverClass import *
 
 # Initialize driver/sensor classes
-drive = driver()
+#drive = driver()
 compFilter = CompFilter()
 
 # Set up variables
@@ -22,21 +23,26 @@ def signal_handler(signal, frame):
 
 # Retrieve previous x angles and average them
 def get_angle():
-    angle = mean( [compFilter() for i in range(debounce)] )
-
+   # angle = numpy.mean( [compFilter() for i in range(debounce)] )
+    angle = 0
+    for x in range(50):
+        compFilter()
+        angle += compFilter.angle
+    angle = angle/50
+    print (angle)
 # Move chair based on angle
-def move_chair():
-    if angle > up_thresh:
-        drive.forward()
+#def move_chair():
+ #   if angle > up_thresh:
+ #       drive.forward()
 
-    elif angle < down_thresh:
-        drive.backward()
+  #  elif angle < down_thresh:
+  #      drive.backward()
 
-    else:
-        drive.stop()
+   # else:
+   #     drive.stop()
 
 # Main
 signal.signal(signal.SIGINT, signal_handler)
 while True:
-    print(get_angle())
+    get_angle()
     #move_chair()
