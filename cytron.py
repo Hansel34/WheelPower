@@ -48,8 +48,8 @@ try:
    sleep(10)    
 
 except:					# exit programe when keyboard interupt
-   p1.start(0)				# set speed to 0
-   p2.start(0)				# set speed to 0
+   p1.start(50)				# set speed to 0
+   p2.start(50)				# set speed to 0
    GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
    GPIO.output(AN2, GPIO.LOW)  
 					# Control+X to save and exit

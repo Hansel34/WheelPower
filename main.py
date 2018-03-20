@@ -15,7 +15,6 @@ flat_thresh = -15
 down_thresh = -13
 up_thresh = -17
 debounce = 50
-angle = 0
 
 # Signal handler (Ctrl+C)
 def signal_handler(signal, frame):
@@ -25,21 +24,22 @@ def signal_handler(signal, frame):
 # Retrieve previous x angles and average them
 def get_angle():
    # angle = numpy.mean( [compFilter() for i in range(debounce)] )
-    angle = 0
+    tempAngle = 0
     for x in range(50):
         compFilter()
-        angle += compFilter.angle
-    angle = angle/50
-    print (angle)
+        tempAngle += compFilter.angle
+    angle = tempAngle/50
+    return angle
     
 # Move chair based on angle
-def move_chair():
+def move_chair(angle):
+    print(angle)
     if abs(angle) > abs(up_thresh):
         drive.forward()
         print("Moving forward")
 
     elif abs(angle) < abs(down_thresh):
-        drive.backward()
+        #drive.backward()
         print("Moving backwards")
 
     else:
@@ -49,5 +49,5 @@ def move_chair():
 # Main
 signal.signal(signal.SIGINT, signal_handler)
 while True:
-    get_angle()
-    move_chair()
+    angle = get_angle()
+    move_chair(angle)
