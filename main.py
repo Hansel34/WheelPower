@@ -10,10 +10,12 @@ from driverClass import *
 drive = driver()
 compFilter = CompFilter()
 
+
+
 # Set up variables
-flat_thresh = -15
-down_thresh = -13
-up_thresh = -17
+flat_thresh = input("pLEASE ENTER ANGLE: ")
+down_thresh = flat_thresh + 2
+up_thresh = flat_thresh - 2
 debounce = 50
 
 # Signal handler (Ctrl+C)
