@@ -19,7 +19,7 @@ class CompFilter():
         self.f_accel_x = 0.0
         self.f_accel_y = 0.0
         self.f_accel_z = 0.0
-        self.acc_alpha = 0.025
+        self.acc_alpha = 0.02
 
         # Create and configure an L3GD20 instance.
         self.l3gd20 = L3GD20.L3GD20(busId = 1, slaveAddr = 0x6b,
@@ -38,7 +38,7 @@ class CompFilter():
         self.f_gyro_y = 0
 
         # Initialize Complimentary Filter variables
-        self.comp_alpha = 0.02
+        self.comp_alpha = 0.08
         self.angle = 0
 
     def __call__(self):
