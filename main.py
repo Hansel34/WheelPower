@@ -27,6 +27,9 @@ def get_base_angle():
 	for x in range(20):
 		compFilter()
 		tempAngle += compFilter.angle
+	global flat_thresh
+	global down_thresh
+	global up_thresh
 	flat_thresh = tempAngle/20
 	down_thresh = flat_thresh - 2
 	up_thresh = flat_thresh + 2
