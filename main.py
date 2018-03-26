@@ -45,7 +45,6 @@ def get_angle():
 	
 # Move chair based on angle
 def move_chair(angle):
-	print(angle)
 	if angle > up_thresh:
 		drive.forward()
 
