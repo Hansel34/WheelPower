@@ -38,7 +38,11 @@ class CompFilter():
         self.f_gyro_y = 0
 
         # Initialize Complimentary Filter variables
+<<<<<<< HEAD
         self.comp_alpha = 0.3
+=======
+        self.comp_alpha = 0.08
+>>>>>>> 7b698ebdd7ab8dbc6bfbdc7d315868df092ccd26
         self.angle = 0
 
     def __call__(self):
@@ -73,4 +77,8 @@ class CompFilter():
                       + (self.comp_alpha * self.pitch))
 
         # Print for debugging
+<<<<<<< HEAD
         #print('Pitch = {0}, Gyro = {1} Angle = {2}'.format(self.pitch, self.f_gyro_y, self.angle))
+=======
+        print('Pitch = {0}, Gyro = {1} Angle = {2}'.format(self.pitch, self.f_gyro_y, self.angle))
+>>>>>>> 7b698ebdd7ab8dbc6bfbdc7d315868df092ccd26
