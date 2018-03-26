@@ -45,7 +45,7 @@ try:
    GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
    p1.start(speed+10)                          
    p2.start(speed+10)                         
-   sleep(10)    
+   sleep(100)    
 
 except:					# exit programe when keyboard interupt
    p1.start(50)				# set speed to 0

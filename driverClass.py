@@ -23,20 +23,20 @@ class driver:
 	
 	def forward(self):
                 
-        GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-        GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-        if self.speedSetting <= 10
-        	self.speedSetting +=1
-        self.p1.start(60+self.speedSetting)                          
-        self.p2.start(60+self.speedSetting)                         
-        sleep(sleepTime)
+                GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+                GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+                if self.speedSetting <= 10:
+                        self.speedSetting +=1
+                self.p1.start(60+self.speedSetting)                          
+                self.p2.start(60+self.speedSetting)                         
+                sleep(sleepTime)
 	def backward(self):
 
-        GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-        GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-        self.p1.start(40)                          
-        self.p2.start(40)                         
-        sleep(sleepTime)
+                GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+                GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+                self.p1.start(40)                          
+                self.p2.start(40)                         
+                sleep(sleepTime)
 
 	def stop(self):
 		GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
