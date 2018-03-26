@@ -24,12 +24,12 @@ def ignore_angle():
 # setup base angles and values
 def get_base_angle():
 	tempAngle = 0
-    for x in range(20):
-        compFilter()
-        tempAngle += compFilter.angle
-    flat_thresh = tempAngle/20
-    down_thresh = flat_thresh - 2
-	up_thresh = flat_thresh + 2
+        for x in range(20):
+                compFilter()
+                tempAngle += compFilter.angle
+        flat_thresh = tempAngle/20
+        down_thresh = flat_thresh - 2
+        up_thresh = flat_thresh + 2
 # Retrieve previous x angles and average them
 def get_angle():
    # angle = numpy.mean( [compFilter() for i in range(debounce)] )
