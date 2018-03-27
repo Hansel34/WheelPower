@@ -16,6 +16,7 @@ p2 = GPIO.PWM(DIG2, 100)		# set pwm for M2
 
 speed = int(input())
 
+if (speed > 50) :
 
 try:					
   while True:
@@ -45,11 +46,7 @@ try:
    GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
    p1.start(speed+10)                          
    p2.start(speed+10)                         
-<<<<<<< HEAD
    sleep(100)    
-=======
-   sleep(10)    
->>>>>>> 7b698ebdd7ab8dbc6bfbdc7d315868df092ccd26
 
 except:					# exit programe when keyboard interupt
    p1.start(50)				# set speed to 0
