@@ -54,4 +54,4 @@ class CompFilter():
                       + ((1-self.comp_alpha) * self.pitch))
 
         # Print for debugging
-        #print('Pitch = {0}, Gyro = {1} Angle = {2}'.format(self.pitch, dy[1] * self.gyro_dt, self.angle))
+        print('Pitch = {0}, Gyro = {1} Angle = {2}'.format(self.pitch, dy[1] * self.gyro_dt, self.angle))

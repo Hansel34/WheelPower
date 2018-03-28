@@ -18,39 +18,78 @@ speed = int(input())
 
 if (speed > 50) :
 
-try:					
-  while True:
+  try:					
+    while True:
 
-   print "STOP"			# display "Forward" when programe run
-   GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
-   GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
-   p1.start(0)				# set Direction for M1
-   p2.start(0)				# set Direction for M2  
-   sleep(1)				#delay for 2 second
-                         
+     print "STOP"			# display "Forward" when programe run
+     GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
+     GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
+     p1.start(0)				# set Direction for M1
+     p2.start(0)				# set Direction for M2  
+     sleep(1)				#delay for 2 second
+                           
 
-   print "GO"
-   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(speed)                          
-   p2.start(speed)                         
-   sleep(1)                             #delay for 3 second
+     print "GO"
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(1)                             #delay for 3 second
 
-   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(speed+5)                          
-   p2.start(speed+5)                         
-   sleep(1)
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(1)
 
-   GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
-   p1.start(speed+10)                          
-   p2.start(speed+10)                         
-   sleep(100)    
+     print "at full speed"
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(100)    
 
-except:					# exit programe when keyboard interupt
-   p1.start(50)				# set speed to 0
-   p2.start(50)				# set speed to 0
-   GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
-   GPIO.output(AN2, GPIO.LOW)  
-					# Control+X to save and exit
+  except:					# exit programe when keyboard interupt
+     p1.start(50)				# set speed to 0
+     p2.start(50)				# set speed to 0
+     GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.LOW)  
+                                          # Control+X to save and exit
+else:
+
+  try:					
+    while True:
+
+     print "STOP"			# display "Forward" when programe run
+     GPIO.output(AN1, GPIO.LOW)		# set AN1 as HIGH, M1B will turn ON
+     GPIO.output(AN2, GPIO.LOW)		# set AN2 as HIGH, M2B will turn ON
+     p1.start(0)				# set Direction for M1
+     p2.start(0)				# set Direction for M2  
+     sleep(1)				#delay for 2 second
+                           
+
+     print "GO"
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(1)                             #delay for 3 second
+
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(1)
+
+     GPIO.output(AN1, GPIO.HIGH)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.HIGH)           # set AN2 as HIGH, M2B will STOP
+     p1.start(speed)                          
+     p2.start(speed)                         
+     sleep(100)    
+
+  except:					# exit programe when keyboard interupt
+     p1.start(50)				# set speed to 0
+     p2.start(50)				# set speed to 0
+     GPIO.output(AN1, GPIO.LOW)           # set AN1 as LOW, M1B will STOP
+     GPIO.output(AN2, GPIO.LOW)  
+                                          # Control+X to save and exit
