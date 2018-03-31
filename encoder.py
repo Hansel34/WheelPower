@@ -12,7 +12,7 @@ counter =0
 while True:
 	GPIO.wait_for_edge(dt,GPIO.RISING)
 	counter+=1
-	if(count%100==0):
-		print ("The wheelchair has travelled " +str(counter/50*21) +" CM so far")
+	if (counter % 100 == 0):
+                print ("The wheelchair has travelled " +str(counter/200*21) +" CM so far")
 
 

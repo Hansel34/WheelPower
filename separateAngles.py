@@ -2,9 +2,8 @@
 import signal
 import sys
 import numpy
-import time
 
-from compFilterv2 import *
+from compFilterv3 import *
 from driverClass import *
 
 # Initialize driver/sensor classes
@@ -34,7 +33,7 @@ def get_base_angle():
 	flat_thresh = tempAngle/20
 	down_thresh = flat_thresh - 2
 	up_thresh = flat_thresh + 2
-	print("Base angle is set to: " +str(flat_thresh))
+	
 # Retrieve previous x angles and average them
 def get_angle():
    # angle = numpy.mean( [compFilter() for i in range(debounce)] )
@@ -46,28 +45,27 @@ def get_angle():
 	return angle
 	
 # Move chair based on angle
-def move_chair(angle):
-        print("Current angle is "+str(angle))
-	if angle > up_thresh:
+#def move_chair(angle):
+        #print("Current angle is "+str(angle))
+	#if angle > up_thresh:
 		#drive.forward()
-		print("Moving forward")
+		#print("Moving forward")
 
 
-	elif angle < down_thresh:
+	#elif angle < down_thresh:
 		#drive.backward()
-		print("Braking")
+		#print("Braking")
 
 
-	else:
+	#else:
 		#drive.stop()
-		print("Not doing anything")
+		#print("Not doing anything")
  
 
 # Main
 signal.signal(signal.SIGINT, signal_handler)
 ignore_angle()
 get_base_angle()
-time.sleep(3)
 while True:
 	angle = get_angle()
-	move_chair(angle)
+	#move_chair(angle)
