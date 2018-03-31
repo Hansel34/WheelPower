@@ -49,9 +49,10 @@ def get_angle():
 def move_chair(angle):
         print("Current angle is "+str(angle))
 	if angle > up_thresh:
-		#drive.forward()
+		drive.forward()
 		print("Moving forward")
-
+		while True:
+			drive.forward()
 
 	elif angle < down_thresh:
 		#drive.backward()
@@ -59,7 +60,7 @@ def move_chair(angle):
 
 
 	else:
-		#drive.stop()
+		drive.stop()
 		print("Not doing anything")
  
 
