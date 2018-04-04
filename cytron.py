@@ -2,8 +2,8 @@ import RPi.GPIO as GPIO			# using Rpi.GPIO module
 from time import sleep			# import function sleep for delay
 GPIO.setmode(GPIO.BCM)			# GPIO numbering
 GPIO.setwarnings(False)			# enable warning from GPIO
-AN2 = 13				# set pwm2 pin on MD10-Hat
-DIG2 = 24				# set dir2 pin on MD10-Hat
+AN2 = 12				# set pwm2 pin on MD10-Hat
+DIG2 = 26				# set dir2 pin on MD10-Hat
 GPIO.setup(AN2, GPIO.OUT)		# set pin as output
 GPIO.setup(DIG2, GPIO.OUT)		# set pin as output
 sleep(1)				# delay for 1 seconds
